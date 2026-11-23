@@ -27,7 +27,7 @@ export function createSlotDiscord(token: string, fetcher: typeof fetch = fetch, 
     async function post(path: string, body: unknown): Promise<Record<string, unknown>> {
       const response = await fetcher(`https://discord.com/api/v10/${path}`, { method: "POST", redirect: "error",
         signal: controller.signal, headers: { Authorization: `Bot ${token}`, "Content-Type": "application/json",
-          "User-Agent": "DiscordBot (https://github.com/missrinam80-besc/besc-discordbot, 0.1.0)" }, body: JSON.stringify(body) });
+          "User-Agent": "DiscordBot (https://github.com/Belgian-Streamers-Community/besc-discordbot, 0.1.0)" }, body: JSON.stringify(body) });
       const reader = response.body?.getReader();
       if (!reader) throw new SlotSendError("outcome_unknown");
       const chunks: Uint8Array[] = []; let size = 0;

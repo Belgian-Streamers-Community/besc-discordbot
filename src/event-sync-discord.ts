@@ -13,7 +13,7 @@ export function createEventSyncDiscord(config: { token: string; guildId: string;
     try {
       const response = await fetcher(`https://discord.com/api/v10/${route}`, { method, redirect: 'error', signal: controller.signal,
         headers: { Authorization: `Bot ${config.token}`, 'Content-Type': 'application/json',
-          'User-Agent': 'DiscordBot (https://github.com/missrinam80-besc/besc-discordbot, 2.0.0)' },
+          'User-Agent': 'DiscordBot (https://github.com/Belgian-Streamers-Community/besc-discordbot, 2.0.0)' },
         ...(body === undefined ? {} : { body: JSON.stringify(body) }) });
       const reader = response.body?.getReader(); if (!reader) throw Error('discord_response_unavailable');
       const chunks: Uint8Array[] = []; let bytes = 0;
