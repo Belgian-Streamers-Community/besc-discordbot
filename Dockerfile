@@ -9,7 +9,7 @@ RUN npm run build
 FROM node:24.14.0-bookworm-slim AS runtime
 ENV NODE_ENV=production
 WORKDIR /app
-LABEL org.opencontainers.image.source="https://github.com/missrinam80-besc/besc-discordbot"
+LABEL org.opencontainers.image.source="https://github.com/Belgian-Streamers-Community/besc-discordbot"
 COPY package.json package-lock.json ./
 RUN npm ci --omit=dev && npm cache clean --force
 RUN mkdir -p /app/state && chown node:node /app/state && chmod 700 /app/state
